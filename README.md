@@ -20,3 +20,5 @@ steps to follow:
 2. run get_auc_phenomeNet.py to estimate the performace on the gold datasets.
 
 All the requierd files are provided in this directory and file names are hard-coded in the scripts.
+
+Note: By using the files provided, you should get an AUC value of 0.76 on  MGI.human.gene-disease.dict and 0.90 on MGI.ortholog.gene-disease.dict
