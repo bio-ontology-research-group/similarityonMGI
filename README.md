@@ -9,4 +9,4 @@ MGI.ortholog.gene-disease.dict
 
 Script to calculate resnik similarity:
 
-simMGI.groovy   (this script utilizes: phenomenet and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes  (HPO.disease-phenotypes.txt)
+simMGI.groovy   (this script utilizes: phenomenet (lightPhenomeNET-inferred.owl.zip) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
