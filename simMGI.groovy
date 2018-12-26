@@ -56,7 +56,7 @@ def getGeneOntology = {
   G graph = new GraphMemory(graph_uri)
 
   // Load OBO file to graph "go.obo"
-  GDataConf goConf = new GDataConf(GFormat.RDF_XML, "/home/kafkass/Projects/gene-phenotype/lightPhenomenet/lightPhenomeNET-inferred.owl")
+  GDataConf goConf = new GDataConf(GFormat.RDF_XML, "lightPhenomeNET-inferred.owl")
   GraphLoaderGeneric.populate(goConf, graph)
 
   // Add virtual root for 3 subontologies__________________________________
@@ -64,7 +64,7 @@ def getGeneOntology = {
   graph.addV(virtualRoot)
 
 
-  new File("/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/MGI_gene_phenotype/MGI.gene-phenotypes.4sim.txt").splitEachLine('\t') { items ->
+  new File("MGI.gene-phenotypes.4sim.txt").splitEachLine('\t') { items ->
   if (items[0].startsWith("#")) return;
     String pathId = items[0];//.split("__")[0];
 
@@ -98,9 +98,9 @@ def getGenes = {
   def genes = [].withDefault {new Gene(0, new LinkedHashSet())}
   def i = 0
 
-//pathogens.4sim.txt
 
-new File("/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/MGI_gene_phenotype/MGI.gene-phenotypes.4sim.txt").splitEachLine('\t') { items ->
+
+new File("MGI.gene-phenotypes.4sim.txt").splitEachLine('\t') { items ->
     
     for (int j = 1; j < items.size(); j++) {
     genes[i].addAnnotation(getURIfromGO(items[j]))
@@ -115,9 +115,9 @@ def getDiseases = {
   def dis = [].withDefault {new Gene(0, new LinkedHashSet())}
   def i = 0 //test_patient_phenotypes.txt
 
-//pathogens.4sim.txt
 
- new File("/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/HPO_disease_phenotypes/HPO.disease.phenotypes.txt").splitEachLine('\t') { items -> 
+
+ new File("HPO.disease.phenotypes.txt").splitEachLine('\t') { items -> 
     
     for (int j = 1; j < items.size(); j++) {
       dis[i].addAnnotation(getURIfromGO(items[j]))
