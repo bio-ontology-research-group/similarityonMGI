@@ -9,7 +9,7 @@ Script to calculate resnik similarity:
 
 simMGI.groovy   (this script utilizes: phenomenet (lightPhenomeNET-inferred.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
 
-AUC calcualtion on gold standard:
+AUC calculation on gold standard:
 
 Gold standards containing gene-disease:
 
@@ -40,7 +40,7 @@ Script to calculate resnik similarity:
 sim_gene-gene_mgi.groovy  (this script utilizes: phenomeNet (phenomenet5-aug-18.owl) and gene-phenotypes from two methods, e.g. text mined extracts (textmined_rank1.txt) and experimental findings from MGI (mgi.gene-pheno.4sim.txt)
 
 
-AUC claculation on the gold standard:
+AUC calculation on gold standard:
 
 get_auc_phenomNet.py would calculate the AUC on gold standard
 
