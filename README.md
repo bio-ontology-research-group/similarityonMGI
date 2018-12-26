@@ -5,15 +5,17 @@ GENE-DISEASE Prediction:
 
 This is based on similarity between gene-phenotypes and disease-phenotypes on the MGI gene-disease datasets
 
+Script to calculate resnik similarity:
+
+simMGI.groovy   (this script utilizes: phenomenet (lightPhenomeNET-inferred.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
+
+AUC calcualtion on gold standard:
+
 Gold standards containing gene-disease:
 
 MGI.human.gene-disease.dict 	
 
 MGI.ortholog.gene-disease.dict
-
-Script to calculate resnik similarity:
-
-simMGI.groovy   (this script utilizes: phenomenet (lightPhenomeNET-inferred.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
 
 
 get_auc_phenomNet.py calculates the AUC on the gold standards.
@@ -32,17 +34,19 @@ GENE-GENE SIMILARITY:
 
 This is based on similarity between gene-phenotypes on the MGI dataset.
 
-Gold standard containing ......
-
-x.dict	
-
 
 Script to calculate resnik similarity:
 
-sim_gene-gene_mgi.groovy  (this script utilizes: phenomenet (phenomenet5-aug-18.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
+sim_gene-gene_mgi.groovy  (this script utilizes: phenomeNet (phenomenet5-aug-18.owl) and gene-phenotypes from two methods, e.g. text mined extracts (textmined_rank1.txt) and experimental findings from MGI (mgi.gene-pheno.4sim.txt)
 
 
-get_auc_phenomNet.py would calculate the AUC on the gold standards.
+AUC claculation on the gold standard:
+
+get_auc_phenomNet.py would calculate the AUC on gold standard
+
+Gold standard
+
+XX.dict
 
 
 steps to follow:
