@@ -56,7 +56,7 @@ def getGeneOntology = {
   G graph = new GraphMemory(graph_uri)
 
   // Load OBO file to graph "go.obo"
-  GDataConf goConf = new GDataConf(GFormat.RDF_XML, "/scratch/dragon/intel/kafkass/gene_phenotype/phenomenet5-aug-18.owl")
+  GDataConf goConf = new GDataConf(GFormat.RDF_XML, "phenomenet5-aug-18.owl")
   GraphLoaderGeneric.populate(goConf, graph)
 
   // Add virtual root for 3 subontologies__________________________________
@@ -64,7 +64,7 @@ def getGeneOntology = {
   graph.addV(virtualRoot)
 
 
-  new File("/scratch/dragon/intel/kafkass/gene_phenotype/prepared_rankedSets_mouse/textmined_rank1.txt").splitEachLine('\t') { items ->
+  new File("textmined_rank1.txt").splitEachLine('\t') { items ->
  if (items[0].startsWith("#")) return;
     String pathId = items[0];//.split("__")[0];
 
@@ -100,7 +100,7 @@ def getGenes = {
 
 //pathogens.4sim.txt
 
-new File("/scratch/dragon/intel/kafkass/gene_phenotype/prepared_rankedSets_mouse/textmined_rank1.txt").splitEachLine('\t') { items ->
+new File("textmined_rank1.txt").splitEachLine('\t') { items ->
     
     for (int j = 1; j < items.size(); j++) {
     genes[i].addAnnotation(getURIfromGO(items[j]))
@@ -117,7 +117,7 @@ def getDiseases = {
 
 //pathogens.4sim.txt
 
- new File("/scratch/dragon/intel/kafkass/gene_phenotype/gene_gene_sim/mgi.gene-pheno.4sim.txt").splitEachLine('\t') { items -> 
+ new File("mgi.gene-pheno.4sim.txt").splitEachLine('\t') { items -> 
     
     for (int j = 1; j < items.size(); j++) {
       dis[i].addAnnotation(getURIfromGO(items[j]))
@@ -205,7 +205,7 @@ GParsPool.withPool {
 }
 
 def fout = new PrintWriter(new BufferedWriter(
-  new FileWriter("/scratch/dragon/intel/kafkass/gene_phenotype/gene_gene_sim/scores_mgi/Resnik.Extrinsic.simResnik.gene-disease.TMrank1.txt")))
+  new FileWriter("Resnik.Extrinsic.simResnik.gene-gene.TMrank1.txt")))
 for (i = 0; i < result.size(); i++) {
   def x = i.intdiv(diseases.size())
   def y = i % diseases.size()
