@@ -18,9 +18,9 @@ def negcum(rank_vec):
 	rank_vec_cum = np.array(rank_vec_cum)
 	return rank_vec_cum
 
-sim_scores = np.loadtxt('./scores_norestriction/Resnik.Extrinsic.simResnik.gene-disease.MGI.txt', dtype = 'float32')
-diseases = np.genfromtxt('/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/HPO_disease_phenotypes/HPO.diseases.txt', dtype = 'str')
-genes = np.genfromtxt('/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/MGI_gene_phenotype/MGI.genes.txt', dtype = 'str')
+sim_scores = np.loadtxt('Resnik.Extrinsic.simResnik.gene-disease.MGI.txt', dtype = 'float32')
+diseases = np.genfromtxt('HPO.diseases.txt', dtype = 'str')
+genes = np.genfromtxt('MGI.genes.txt', dtype = 'str')
 
 #old evaluation data
 #with open('gdas_human.dict','r') as f:
@@ -29,7 +29,7 @@ genes = np.genfromtxt('/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/
 #diseases_set = np.genfromtxt('common.diseases.txt', dtype = 'str')
 
 # updated evaluation data
-with open('/home/kafkass/Projects/gene-phenotype/TM/NEWgene-dis-sim/MGI-Gene_Disease/MGI.human.gene-disease.dict','r') as f:
+with open('MGI.human.gene-disease.dict','r') as f:
 	disease_genes = json.load(f)
 	diseases_set = set(diseases).intersection(disease_genes.keys())
 
