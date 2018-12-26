@@ -18,9 +18,9 @@ def negcum(rank_vec):
 	rank_vec_cum = np.array(rank_vec_cum)
 	return rank_vec_cum
 
-diseases = np.genfromtxt('/home/kafkass/Projects/gene-phenotype/TM/Final/gene_gene_similarity/gold_gene_pheno/4sim/mgi.genes.txt', dtype = 'str')
-genes = np.genfromtxt('/home/kafkass/Projects/gene-phenotype/TM/Final/prepared_rankedSets_mouse/genes.rank1.txt', dtype = 'str')
-sim_scores = np.loadtxt('./scores_mgi/Resnik.Extrinsic.simResnik.gene-gene.TMrank1.txt', dtype = 'float32')
+diseases = np.genfromtxt('mgi.genes.txt', dtype = 'str')
+genes = np.genfromtxt('genes.rank1.txt', dtype = 'str')
+sim_scores = np.loadtxt('Resnik.Extrinsic.simResnik.gene-gene.TMrank1.txt', dtype = 'float32')
 
 
 #old evaluation data
@@ -30,7 +30,7 @@ sim_scores = np.loadtxt('./scores_mgi/Resnik.Extrinsic.simResnik.gene-gene.TMran
 #diseases_set = np.genfromtxt('common.diseases.txt', dtype = 'str')
 
 # updated evaluation data
-with open('./gold_gene_pheno/gold.mgi-tm.gene-gene.dict','r') as f:
+with open('gold.mgi-tm.gene-gene.dict','r') as f:
 	disease_genes = json.load(f)
 	diseases_set = set(diseases).intersection(disease_genes.keys())
 
@@ -92,8 +92,8 @@ no_diseases=format(len(label_mat))
 no_genes=format(len(genes))
 auc_var=format(auc(fpr_r, tpr_r))
 
-np.savetxt('./auc/auc_MGI-gene-gene_TMrank1.txt', auc_data, fmt = "%s")
-with open('./auc/auc_MGI-gene-gene_TMrank1.txt', 'a') as file:
+np.savetxt('auc_MGI-gene-gene_TMrank1.txt', auc_data, fmt = "%s")
+with open('auc_MGI-gene-gene_TMrank1.txt', 'a') as file:
     file.write("AUC="+auc_var+"\n")
     file.write("#genes="+no_genes+"\n")
     file.write("#mgi-genes="+no_diseases)
