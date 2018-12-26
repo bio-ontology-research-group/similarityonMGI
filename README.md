@@ -42,7 +42,7 @@ sim_gene-gene_mgi.groovy  (this script utilizes: phenomeNet (phenomenet5-aug-18.
 
 AUC calculation on gold standard:
 
-get_auc_phenomNet.py would calculate the AUC on gold standard
+get_auc_gene-gene-mouse1.py calculates the AUC on gold standard
 
 Gold standard
 
@@ -51,7 +51,7 @@ XX.dict
 
 steps to follow:
 1. run groovy sim_gene-gene_mgi.groovy to get the similarity scores between gene-phenotypes and gene-phenotypes
-2. run python get_auc_phenomeNet.py to estimate the performace on the gold dataset.
+2. run python get_auc_gene-gene-mouse1.py to estimate the performace on the gold dataset.
 
 All the requierd files are provided in this directory and file names are hard-coded in the scripts.
 
