@@ -32,7 +32,7 @@ Note: By using the files provided, you should get an AUC value of 0.76 on  MGI.h
 
 GENE-GENE SIMILARITY:
 
-This is based on similarity between gene-phenotypes on the MGI dataset.
+This is based on phenotypic similarities between genes
 
 
 Script to calculate resnik similarity:
@@ -46,7 +46,7 @@ get_auc_gene-gene-mouse1.py calculates the AUC on gold standard
 
 Gold standard
 
-XX.dict
+gold.mgi-tm.gene-gene.dict
 
 
 steps to follow:
