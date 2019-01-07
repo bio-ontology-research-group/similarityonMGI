@@ -23,9 +23,9 @@ get_auc_phenomNet.py calculates the AUC on the gold standards.
 
 steps to follow:
 1. run groovy simMGI.groovy to get the similarity scores between gene-phenotypes and disease-phenotypes
-2. run python get_auc_phenomeNet.py to estimate the performace on the gold datasets.
+2. run python get_auc_phenomeNet.py to estimate the performance on the gold datasets.
 
-All the requierd files are provided in this directory and file names are hard-coded in the scripts.
+All the required files are provided in this directory and file names are hard-coded in the scripts.
 
 Note: By using the files provided, you should get an AUC value of 0.76 on  MGI.human.gene-disease.dict and 0.90 on MGI.ortholog.gene-disease.dict
 
@@ -51,9 +51,9 @@ gold.mgi-tm.gene-gene.dict
 
 steps to follow:
 1. run groovy sim_gene-gene_mgi.groovy to get the similarity scores between gene-phenotypes and gene-phenotypes
-2. run python get_auc_gene-gene-mouse1.py to estimate the performace on the gold dataset.
+2. run python get_auc_gene-gene-mouse1.py to estimate the performance on the gold dataset.
 
-All the requierd files are provided in this directory and file names are hard-coded in the scripts.
+All the required files are provided in this directory and file names are hard-coded in the scripts.
 
   
   
