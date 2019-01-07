@@ -1,24 +1,27 @@
 # similarityonMGI
-This repository contains data and scripts to evaluate semantic similarity between two given entity (e.g. genes and diseases) based on their phenotypes.
+This repository contains data and scripts to analize semantic similarity between two given entities (e.g. genes and diseases) based on their phenotypes.
 
-GENE-DISEASE Prediction:
+**EXAMPLE 1) GENE-DISEASE Prediction:**
 
-This is based on similarity between gene-phenotypes and disease-phenotypes on the MGI gene-disease datasets
-
-Script to calculate resnik similarity:
-
-simMGI.groovy   (this script utilizes: phenomenet (lightPhenomeNET-inferred.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
-
-AUC calculation on gold standard:
-
-Gold standards containing gene-disease:
-
-MGI.human.gene-disease.dict 	
-
-MGI.ortholog.gene-disease.dict
+Gene-disease associations can be predicted based on the similarity between gene-phenotypes and disease-phenotypes and evaluation can be done on the MGI gene-disease dataset.
 
 
-get_auc_phenomNet.py calculates the AUC on the gold standards.
+simMGI.groovy  
+
+This script calculates the Resnik similarity between genes and diseases.
+It utilizes: phenomenet (lightPhenomeNET-inferred.owl) and gene-phenotypes (MGI.gene-phenotypes.4sim.txt) and disease-phenotypes (HPO.disease-phenotypes.txt)
+
+
+
+MGI.human.gene-disease.dict 	and MGI.ortholog.gene-disease.dict
+
+
+These are the gold standards containing gene-disease associations
+
+
+get_auc_phenomNet.py 
+
+This script calculates the AUC on the gold standards
 
 
 steps to follow:
@@ -30,21 +33,22 @@ All the required files are provided in this directory and file names are hard-co
 Note: By using the files provided, you should get an AUC value of 0.76 on  MGI.human.gene-disease.dict and 0.90 on MGI.ortholog.gene-disease.dict
 
 
-GENE-GENE SIMILARITY:
+**EXAMPLE 2) GENE-GENE SIMILARITY:**
 
-This is based on phenotypic similarities between genes
-
-
-Script to calculate resnik similarity:
-
-sim_gene-gene_mgi.groovy  (this script utilizes: phenomeNet (phenomenet5-aug-18.owl) and gene-phenotypes from two methods, e.g. text mined extracts (textmined_rank1.txt) and experimental findings from MGI (mgi.gene-pheno.4sim.txt)
+Known genes can be recovered by using their phenotypic similarities.
 
 
-AUC calculation on gold standard:
+sim_gene-gene_mgi.groovy  
 
-get_auc_gene-gene-mouse1.py calculates the AUC on gold standard
+This script calculates the similarities between genes. It utilizes: phenomeNet (phenomenet5-aug-18.owl) and gene-phenotypes from two methods, e.g. text mined extracts (textmined_rank1.txt) and experimental findings from MGI (mgi.gene-pheno.4sim.txt)
 
-Gold standard
+
+get_auc_gene-gene-mouse1.py 
+
+This script calculates the AUC on a gold standard
+
+
+Gold standard:
 
 gold.mgi-tm.gene-gene.dict
 
