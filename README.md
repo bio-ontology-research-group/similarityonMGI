@@ -1,5 +1,5 @@
 # similarityonMGI
-this repsoitory contains data and scripts to evaluate semantic similarity involving genes and diseases based on their phenotypes.
+This repository contains data and scripts to evaluate semantic similarity involving genes and diseases based on their phenotypes.
 
 GENE-DISEASE Prediction:
 
